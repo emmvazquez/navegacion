@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.practica.navegacion.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_AFragment"
+            app:destination="@id/AFragment" />
+        <action
+            android:id="@+id/accion_alfragmento_b"
+            app:destination="@id/BFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="com.practica.navegacion.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/acccion_Afragment_a_BFragment"
+            app:destination="@id/BFragment"
+            app:enterAnim="@anim/fragment_fast_out_extra_slow_in"
+            app:exitAnim="@anim/fragment_fade_enter" />
+    </fragment>
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="com.practica.navegacion.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/accion_al_C"
+            app:destination="@id/CFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CFragment"
+        android:name="com.practica.navegacion.CFragment"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" />
+</navigation>
